@@ -12,7 +12,7 @@ def main():
     # создать поверхность -> нарисовать на ней элементы -> создать rect -> screen.blit
     surf = pygame.Surface(CARD_SIZE)
     # surf.fill("white")
-    pygame.draw.rect(surf, "white", (0, 0, 171, 236), border_radius=12)
+    pygame.draw.rect(surf, "white", (0, 0, 171, 236), border_radius=15)
 
     card_picture = pygame.image.load(CARD_SPRITE_URL).convert_alpha()
     rect = pygame.Rect(COORDINATES["Red king"])
