@@ -12,11 +12,21 @@ def main():
     # создать поверхность -> нарисовать на ней элементы -> создать rect -> screen.blit
     surf = pygame.Surface(CARD_SIZE)
     surf.fill("white")
-    element_surf = pygame.image.load(CARD_SPRITE_URL).convert_alpha()
+
+    card_picture = pygame.image.load(CARD_SPRITE_URL).convert_alpha()
     rect = pygame.Rect(COORDINATES["Red king"])
-    element_surf = element_surf.subsurface(rect)
+    element_surf = card_picture.subsurface(rect)
     element_rect = element_surf.get_rect(midbottom = (171 // 2, 236))
     surf.blit(element_surf, element_rect)
+    rect = pygame.Rect(COORDINATES["RedK"])
+    element_surf = card_picture.subsurface(rect)
+    element_rect = element_surf.get_rect(center = (35, 40))
+    surf.blit(element_surf, element_rect)
+    rect = pygame.Rect(COORDINATES["Heart mini"])
+    element_surf = card_picture.subsurface(rect)
+    element_rect = element_surf.get_rect(center = (131, 40))
+    surf.blit(element_surf, element_rect)
+
     rect = surf.get_rect(center = (400, 300))
 
     while True:
